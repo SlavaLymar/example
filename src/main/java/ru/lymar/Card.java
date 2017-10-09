@@ -8,7 +8,10 @@ public class Card {
     // private data
     private char value;
     private int suit;
-    private boolean errorFlag;
+    private boolean errorFlag = true;
+
+    public Card() {
+    }
 
     // constructor
     public Card(char value, int suit) {

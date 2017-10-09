@@ -26,8 +26,12 @@ public class Hand {
     }
 
     public Card playCard() {
-        Card card = this.myCards[numbCard];
-        this.myCards[numbCard--] = null;
+        Card card = null;
+        if (this.numbCard > 0 && ( this.numbCard < this.myCards.length)) {
+            card = this.myCards[numbCard - 1];
+            this.myCards[numbCard - 1] = null;
+            numbCard--;
+        }
         return card;
     }
 
@@ -39,9 +43,9 @@ public class Hand {
                 '}';
     }
 
-    public Card inspectCard(int k) {
-
-    }
+//    public Card inspectCard(int k) {
+//
+//    }
 
     public int getNumbCard() {
         return numbCard;
@@ -49,5 +53,9 @@ public class Hand {
 
     public void setNumbCard(int numbCard) {
         this.numbCard = numbCard;
+    }
+
+    public Card[] getMyCards() {
+        return myCards;
     }
 }
